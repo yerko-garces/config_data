@@ -30,11 +30,26 @@ spring:
           uri: lb://alumno-service
           predicates:
             - Path=/alumno/**
+          filters:
+            - name: Cors
+              args:
+                allowedOrigins: "http://localhost:3000"
+                allowedMethods: "GET, POST, PUT, DELETE"
         - id: cuota-service
           uri: lb://cuota-service
           predicates:
             - Path=/cuota/**
+          filters:
+            - name: Cors
+              args:
+                allowedOrigins: "http://localhost:3000"
+                allowedMethods: "GET, POST, PUT, DELETE"  
         - id: nota-service
           uri: lb://nota-service
           predicates:
             - Path=/nota/**
+          filters:
+            - name: Cors
+              args:
+                allowedOrigins: "http://localhost:3000"
+                allowedMethods: "GET, POST, PUT, DELETE"
